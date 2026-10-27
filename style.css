@@ -1,0 +1,409 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f4f4f5;
+    color: #29292d;
+    font-family: Arial, sans-serif;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 245px;
+    background: #fff;
+    border-right: 1px solid #e5e5e8;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+
+.subtitle, .label {
+    color: #99999f;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+
+nav {
+    display: grid;
+    gap: 9px;
+    margin-top: 45px;
+}
+
+nav button {
+    border: none;
+    background: transparent;
+    color: #77777e;
+    text-align: left;
+    padding: 14px;
+    border-radius: 12px;
+}
+
+nav button:hover,
+nav button.active {
+    background: #29292d;
+    color: white;
+}
+
+.privacy {
+    margin-top: auto;
+    padding-top: 25px;
+    color: #88888e;
+    font-size: 12px;
+}
+
+main {
+    flex: 1;
+    min-width: 0;
+    padding: 0 40px;
+}
+
+header {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e5e8;
+    color: #85858b;
+    font-size: 12px;
+}
+
+header b {
+    color: #29292d;
+}
+
+.status {
+    color: #77777e;
+}
+
+.page {
+    padding-top: 40px;
+    min-height: 75vh;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1 {
+    font-size: 34px;
+    letter-spacing: -1.5px;
+    margin-top: 15px;
+}
+
+.muted {
+    color: #909097;
+    font-size: 13px;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.stat {
+    background: white;
+    padding: 22px;
+    border: 1px solid #e8e8eb;
+    border-radius: 16px;
+}
+
+.stat h2 {
+    font-size: 25px;
+}
+
+.stat p {
+    color: #909097;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 0 20px;
+}
+
+.section-title h2 {
+    font-size: 19px;
+}
+
+.section-title button {
+    background: none;
+    border: none;
+    color: #66666c;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.photo-card {
+    background: white;
+    border: 1px solid #e6e6e9;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.photo-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-caption {
+    padding: 13px;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.photo-caption button {
+    float: right;
+    border: none;
+    background: transparent;
+    color: #999;
+}
+
+.main-button {
+    margin-top: 22px;
+    padding: 13px 18px;
+    background: #29292d;
+    color: white;
+    border: none;
+    border-radius: 11px;
+    font-size: 12px;
+}
+
+.main-button:hover {
+    background: #45454b;
+}
+
+.empty {
+    text-align: center;
+    padding: 35px 10px;
+    color: #99999f;
+    font-size: 13px;
+}
+
+.chat-box {
+    margin-top: 25px;
+    background: white;
+    border: 1px solid #e5e5e8;
+    border-radius: 17px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 420px;
+}
+
+.messages {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.message {
+    background: #f0f0f2;
+    padding: 12px 15px;
+    border-radius: 12px;
+    max-width: 80%;
+    align-self: flex-start;
+    overflow-wrap: anywhere;
+    font-size: 13px;
+}
+
+.message small {
+    display: block;
+    color: #99999f;
+    font-size: 10px;
+    margin-top: 7px;
+}
+
+#chat-form {
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    border-top: 1px solid #eeeef0;
+}
+
+#message-input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #e5e5e8;
+    border-radius: 10px;
+    padding: 12px;
+    outline: none;
+}
+
+#chat-form button {
+    width: 45px;
+    border: none;
+    border-radius: 10px;
+    background: #29292d;
+    color: white;
+}
+
+.family-card {
+    max-width: 600px;
+    background: white;
+    padding: 25px;
+    margin-top: 25px;
+    border: 1px solid #e5e5e8;
+    border-radius: 17px;
+}
+
+.family-card h2 {
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+.member {
+    padding: 15px 0;
+    border-top: 1px solid #eeeef0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+}
+
+.member span {
+    background: #e9e9eb;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+}
+
+.member button {
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    color: #888;
+}
+
+footer {
+    padding: 25px 0;
+    border-top: 1px solid #e5e5e8;
+    color: #aaa;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 850px) {
+    main {
+        padding: 0 22px;
+    }
+
+    .sidebar {
+        width: 190px;
+        padding: 25px 12px;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .app {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 12px;
+        border-right: none;
+        border-bottom: 1px solid #e5e5e8;
+    }
+
+    .sidebar h2 {
+        font-size: 20px;
+    }
+
+    .subtitle, .privacy {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        gap: 5px;
+        margin-top: 12px;
+        overflow-x: auto;
+    }
+
+    nav button {
+        white-space: nowrap;
+        padding: 11px;
+        font-size: 11px;
+    }
+
+    main {
+        padding: 0 15px;
+    }
+
+    header {
+        height: 55px;
+    }
+
+    .page {
+        padding-top: 28px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .stats {
+        gap: 8px;
+    }
+
+    .stat {
+        padding: 13px 10px;
+    }
+
+    .stat h2 {
+        font-size: 21px;
+    }
+
+    .stat p {
+        font-size: 10px;
+    }
+
+    .photo-grid {
+        gap: 10px;
+    }
+}

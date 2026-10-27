@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Space</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+    <aside class="sidebar">
+        <h2>f. family</h2>
+        <p class="subtitle">OUR LITTLE WORLD</p>
+
+        <nav>
+            <button class="active" onclick="showPage('home')">⌂ Головна</button>
+            <button onclick="showPage('chat')">✉ Повідомлення</button>
+            <button onclick="showPage('photos')">▧ Фотоальбом</button>
+            <button onclick="showPage('family')">♧ Моя сім'я</button>
+        </nav>
+
+        <div class="privacy">🔒 Приватний простір</div>
+    </aside>
+
+    <main>
+        <header>
+            <span>Наша сім'я / <b id="page-name">Головна</b></span>
+            <span class="status">● Family Space</span>
+        </header>
+
+        <section id="home" class="page">
+            <p class="label">ОДНЕ МІСЦЕ ДЛЯ НАЙБЛИЖЧИХ</p>
+            <h1>Наш маленький світ 🤍</h1>
+            <p class="muted">Діліться моментами, які хочеться пам'ятати.</p>
+
+            <div class="stats">
+                <div class="stat"><h2 id="photo-count">0</h2><p>Фотографій</p></div>
+                <div class="stat"><h2 id="message-count">0</h2><p>Повідомлень</p></div>
+                <div class="stat"><h2>∞</h2><p>Спогадів</p></div>
+            </div>
+
+            <div class="section-title">
+                <h2>Сімейна стрічка</h2>
+                <button onclick="showPage('photos')">Усі фото →</button>
+            </div>
+
+            <div id="home-photos" class="photo-grid"></div>
+            <p id="empty-home" class="empty">Тут поки порожньо. Додайте перший спогад!</p>
+
+            <button class="main-button" onclick="document.getElementById('photo-input').click()">
+                + Додати фотографію
+            </button>
+        </section>
+
+        <section id="chat" class="page hidden">
+            <p class="label">ЗАВЖДИ НА ЗВ'ЯЗКУ</p>
+            <h1>Сімейний чат</h1>
+            <p class="muted">Усе важливе — в одному місці.</p>
+
+            <div class="chat-box">
+                <div id="messages" class="messages">
+                    <p class="empty">Напишіть перше повідомлення 💬</p>
+                </div>
+
+                <form id="chat-form">
+                    <input id="message-input" placeholder="Написати повідомлення..." maxlength="500">
+                    <button type="submit">➤</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="photos" class="page hidden">
+            <p class="label">ВАШІ СПІЛЬНІ СПОГАДИ</p>
+            <h1>Фотоальбом</h1>
+            <p class="muted">Фотографії, до яких хочеться повертатися.</p>
+
+            <button class="main-button" onclick="document.getElementById('photo-input').click()">
+                + Завантажити фото
+            </button>
+
+            <div id="all-photos" class="photo-grid"></div>
+            <p id="empty-album" class="empty">Альбом чекає на ваші фотографії.</p>
+        </section>
+
+        <section id="family" class="page hidden">
+            <p class="label">НАЙБЛИЖЧІ ЛЮДИ</p>
+            <h1>Моя сім'я</h1>
+            <p class="muted">Люди, з якими хочеться ділитися життям.</p>
+
+            <div class="family-card">
+                <h2>⌂ Наша сім'я</h2>
+                <div id="members"></div>
+                <button class="main-button" onclick="addMember()">+ Додати учасника</button>
+            </div>
+        </section>
+
+        <footer>FAMILY SPACE · СТВОРЕНО З ЛЮБОВ'Ю</footer>
+    </main>
+</div>
+
+<input type="file" id="photo-input" accept="image/*" multiple hidden>
+
+<script src="script.js"></script>
+</body>
+</html>
